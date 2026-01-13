@@ -10,4 +10,5 @@ public interface DroneRepository extends JpaRepository<Drone, Long> {
     List<Drone> findByStatus(Drone.DroneStatus status);
 
     boolean existsBySerialNumber(String serialNumber);
+
 }

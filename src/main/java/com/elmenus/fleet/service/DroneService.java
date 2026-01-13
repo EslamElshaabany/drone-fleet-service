@@ -3,20 +3,20 @@ package com.elmenus.fleet.service;
 import com.elmenus.fleet.dto.DroneDTO;
 import com.elmenus.fleet.dto.LoadDTO;
 import com.elmenus.fleet.entity.Drone;
-import com.elmenus.fleet.entity.DroneLoad;
 import com.elmenus.fleet.entity.Medication;
 
 import java.util.List;
 
 public interface DroneService {
-    Drone registerDrone(DroneDTO droneDTO);
 
-    Drone loadDrone(Long id, LoadDTO loadDTO);
+  Drone registerDrone(DroneDTO droneDTO);
 
-    List<Medication> getLoadedMedications(Long id);
+  Drone loadDrone(Long id, LoadDTO loadDTO);
 
-    List<Drone> getAvailableDrones(Drone.DroneStatus status);
+  List<Medication> getLoadedMedications(Long id);
 
-    Integer checkBatteryLevel(Long id);
+  List<Drone> getAvailableDrones(Drone.DroneStatus status);
+
+  Integer checkBatteryLevel(Long id);
 
 }

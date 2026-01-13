@@ -5,25 +5,13 @@ import jakarta.validation.constraints.Pattern;
 
 import java.util.List;
 
-public class LoadDTO {
+public record LoadDTO(
 
     @NotEmpty(message = "Medication codes must not be empty")
-    private List<@Pattern(regexp = "^[A-Z0-9_]*$",
-            message = "Medication code can only contain upper case letters, numbers and underscores")
-            String> medicationCodes;
+    List<@Pattern(
+        regexp = "^[A-Z0-9_]*$",
+        message = "Medication code can only contain upper case letters, numbers, and underscores"
+    ) String> medicationCodes
 
-    public LoadDTO() {
-    }
-
-    public LoadDTO(List<String> medicationCodes) {
-        this.medicationCodes = medicationCodes;
-    }
-
-    public List<String> getMedicationCodes() {
-        return medicationCodes;
-    }
-
-    public void setMedicationCodes(List<String> medicationCodes) {
-        this.medicationCodes = medicationCodes;
-    }
+) {
 }
